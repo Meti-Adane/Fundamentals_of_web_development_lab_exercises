@@ -32,7 +32,7 @@ let perosonalInformation ={
         function(amount){
             this.current_balance = this.current_balance + amount;
             console.log("Your account has been credited with", amount, "your current balance is :", this.current_balance)
-            this.transactions.push("You deposited amount"+ amount +"to your account")
+            this.transactions.push("You deposited amount "+ amount +" to your account")
         },
     withdraw:
         function(amount){
@@ -65,35 +65,30 @@ let perosonalInformation ={
         },
     
 }
-    
-var user = perosonalInformation
-console.log("Dont have an account with our bank yet ? \n Create a new account")
-var service_no = prompt("Dont have an account with our bank yet ? \n Create a new account \n 1. Continue 2. Exit")
-user.new_account()
 
+var user = perosonalInformation
 
 while (true){
-    var service_no = prompt("Please choose service number from the list below: \n 1. Create new account\n 2. Deposit\n 3. Withdraw\n 4. Transfer\n 5. Balance\n 6. View transactions")
-if (service_no == 1){
-    user.new_account();         
-    continue
-}
-    
-if (service_no == 2){let amount = parseFloat(prompt("Enter the amount you want to deposit"));user.deposit(amount); continue}
-if (service_no == 3){
-    let amount = parseFloat(prompt("Enter the amount you want to withdraw"));
-    user.withdraw(amount); this.
-    continue
-}
-if (service_no == 4){
-    let amount = parseFloat(prompt("Enter the amount you want to transfer"));
-    let target_address = (prompt("Enter the account id of the user you want to send to"));
-    user.transfer(amount, target_address);
-    continue
-}
-if (service_no == 5){user.balance(); continue}
-if (service_no ==6){user.view_transactions()}
-if (service_no == 0) break;
-}
+    var service_no = prompt("Please choose service number from the list below: \n 1. Create new account\n 2. Deposit\n 3. Withdraw\n 4. Transfer\n 5. Balance\n 6. View transactions\n 0. Exit")
+    if (service_no == 1){
+        user.new_account();         
+        continue
+    }
+        
+    if (service_no == 2){let amount = parseFloat(prompt("Enter the amount you want to deposit"));user.deposit(amount); continue}
+    if (service_no == 3){
+        let amount = parseFloat(prompt("Enter the amount you want to withdraw"));
+        user.withdraw(amount); this.
+        continue
+    }
+    if (service_no == 4){
+        let amount = parseFloat(prompt("Enter the amount you want to transfer"));
+        user.transfer(amount, target_address);
+        continue
+    }
+    if (service_no == 5){user.balance(); continue}
+    if (service_no ==6){user.view_transactions(); continue}
+    if (service_no == 0) break;
+    }
 
 
